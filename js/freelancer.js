@@ -51,15 +51,24 @@
 
   // Modal popup$(function () {
   $('.portfolio-item').magnificPopup({
-    type: 'inline',
+    type: 'inline',   
     preloader: false,
     focus: '#username',
-    modal: true
+    modal: true,
+    
+    
   });
-  $(document).on('click', '.portfolio-modal-dismiss', function(e) {
+ $(document).on('click', '.portfolio-modal-dismiss', function(e) {
     e.preventDefault();
     $.magnificPopup.close();
-  });
+  }); 
+  
+  $(document).ready(function() {  
+    $('.portfolio-item').magnificPopup({
+      type:'inline',
+      focus:".mfp-close",
+    });
+   });
 
   // Floating label headings for the contact form
   $(function() {
